@@ -1,0 +1,1 @@
+Sistema de controle interno de patrimônio do LIPSI
