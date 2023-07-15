@@ -2,8 +2,8 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
-import theme, { roboto } from '../src/theme';
-import createEmotionCache from '../src/createEmotionCache';
+//import theme, { roboto } from '../src/theme';
+import createEmotionCache from '../utils/createEmotionCache';
 
 export default function MyDocument(props) {
   const { emotionStyleTags } = props;
@@ -12,7 +12,7 @@ export default function MyDocument(props) {
     <Html lang="en" className={roboto.className}>
       <Head>
         {/* PWA primary color */}
-        <meta name="theme-color" content={theme.palette.primary.main} />
+        {/* <meta name="theme-color" content={theme.palette.primary.main} /> */}
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="emotion-insertion-point" content="" />
         {emotionStyleTags}
