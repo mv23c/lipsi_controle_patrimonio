@@ -9,3 +9,16 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// Criar uma migration: yarn prisma migrate dev
+model Patrimony {
+  id String @id @default(uuid())
+  Name String
+  Tombamento Int
+  Status String
+  Detentor String 
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map("patrimonios")
+}
