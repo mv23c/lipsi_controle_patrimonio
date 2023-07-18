@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { CreatePatrimonyController } from './controllers/patrimony/CreatePatrimonyController';
+import { DetailPatrimonyController } from './controllers/patrimony/DetailPatrimonyController';
 
 const router = Router();
 
@@ -9,6 +10,8 @@ const router = Router();
 // })
 
 // -- Rotas Patrimonios --
-router.post('/patrimonios', new CreatePatrimonyController().handle)
+router.post('/registerPatrimony', new CreatePatrimonyController().handle)
+
+router.get('/detailPatrimony', new DetailPatrimonyController().handle)
 
 export { router };
