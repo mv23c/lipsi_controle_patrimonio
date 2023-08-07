@@ -27,7 +27,6 @@ export function isAuthenticated(
   // console.log(token);
 
   try {
-
     // Validar esse token
     const { sub } = verify(
       token,

@@ -8,6 +8,7 @@ import { DetailUserController } from './controllers/user/DetailUserController';
 // importações patrimonio
 import { CreatePatrimonyController } from './controllers/patrimony/CreatePatrimonyController';
 import { DetailPatrimonyController } from './controllers/patrimony/DetailPatrimonyController';
+import { ListPatrimonyController } from './controllers/patrimony/ListPatrimonyController';
 
 // middleware
 import { isAuthenticated } from './middlewares/isAuthenticated';
@@ -28,6 +29,7 @@ router.get('/detailUser', isAuthenticated, new DetailUserController().handle)
 // -- Rotas Patrimonios --
 router.post('/registerPatrimony', new CreatePatrimonyController().handle) // Rota de cadastro de patrimônio
 router.get('/detailPatrimony', new DetailPatrimonyController().handle) // Rota de detalhes do patrimônio
+router.get('/listPatrimony', isAuthenticated, new ListPatrimonyController().handle) // Rota de listar patrimônios
 
 export { router };
 
