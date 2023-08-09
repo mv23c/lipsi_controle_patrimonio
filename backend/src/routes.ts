@@ -9,10 +9,10 @@ import { DetailUserController } from './controllers/user/DetailUserController';
 import { CreatePatrimonyController } from './controllers/patrimony/CreatePatrimonyController';
 import { DetailPatrimonyController } from './controllers/patrimony/DetailPatrimonyController';
 import { ListPatrimonyController } from './controllers/patrimony/ListPatrimonyController';
+import { EditPatrimonyController } from './controllers/patrimony/EditPatrimonyController';
 
 // middleware
 import { isAuthenticated } from './middlewares/isAuthenticated';
-
 
 const router = Router();
 
@@ -30,11 +30,10 @@ router.get('/detailUser', isAuthenticated, new DetailUserController().handle)
 router.post('/registerPatrimony', new CreatePatrimonyController().handle) // Rota de cadastro de patrimônio
 router.get('/detailPatrimony', new DetailPatrimonyController().handle) // Rota de detalhes do patrimônio
 router.get('/listPatrimony', isAuthenticated, new ListPatrimonyController().handle) // Rota de listar patrimônios
+router.put('/updatePatrimony', isAuthenticated, new EditPatrimonyController().handle) // Rota de editar patrimônio
 
 export { router };
 
 /**
  * Rota do tipo get é usada, entre outras coisas, para buscar informações.
- * 
- * 
  */
